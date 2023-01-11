@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 import Header from "../Header/Header";
+import Banner from "../Banner/Banner";
 
 const Home = () => {
 
@@ -15,6 +16,7 @@ const Home = () => {
     return (
         <div>
             <Header/>
+            <Banner/>
         </div>
     );
 };
