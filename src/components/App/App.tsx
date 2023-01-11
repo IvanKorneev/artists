@@ -1,5 +1,6 @@
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import Home from "../Home/Home";
+import "./App.sass";
 
 const App = () => {
     return (
