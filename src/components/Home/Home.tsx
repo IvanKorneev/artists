@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
+import Header from "../Header/Header";
 
 const Home = () => {
 
@@ -13,7 +14,7 @@ const Home = () => {
     }, [])
     return (
         <div>
-            Home
+            <Header/>
         </div>
     );
 };

@@ -1,8 +1,9 @@
 import {Link} from "react-router-dom";
+import './Header.sass';
 
 const Header = () => {
     return (
-        <header className='Header'>
+        <header className='header'>
             <Link to="/">Music db</Link>
         </header>
     )
