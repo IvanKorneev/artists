@@ -1,6 +1,37 @@
-const Artist = () => {
+import {useEffect, useState} from "react";
+import {Artist} from "../Types/Artist";
+import './Artist.sass';
+import axios from "axios";
+import {RouteComponentProps} from "react-router-dom";
+
+
+const ArtistInfo = ({match}: RouteComponentProps<{ artistid: string }>) => {
+    const URL_ARTIST = ' http://localhost:3001/artists'
+    const [artistInfo, setArtistInfo] = useState<Artist>({} as Artist);
+    useEffect(() => {
+        axios.get(`${URL_ARTIST}/${match.params.artistid}`).then(response => {
+            setArtistInfo(response.data)
+        })
+    }, [])
     return (
-        <div></div>
+        <>
+            <div className='artist_bio'>
+                <div className='avatar'>
+                    <span style={{
+                        background: `url('/images/covers/${artistInfo.cover}.jpg') no-repeat`
+                    }}>
+                    </span>
+                </div>
+                <div className='bio'>
+                    <h3>{artistInfo.name}</h3>
+                    <div className='bio_text'>
+                        {artistInfo.bio}
+                    </div>
+                </div>
+
+            </div>
+
+        </>
     );
 };
-export default Artist;
+export default ArtistInfo;

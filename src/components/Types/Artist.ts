@@ -1,9 +1,10 @@
 import {Album} from "./Album";
 
 export interface Artist {
-    id: number,
-    name: string,
+    albums: Album[],
+    bio: string,
     cover: string,
-    bio: string
-    albums: Album[]
+    genre: string,
+    id: number,
+    name: string
 }
