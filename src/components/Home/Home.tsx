@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-import Header from "../Header/Header";
 import Banner from "../Banner/Banner";
 import ArtistList from "../ArtistList/ArtistList";
 import {Artist} from "../Types/Artist";
@@ -17,7 +16,7 @@ const Home = () => {
     }, [])
     return (
         <div>
-            <Header/>
+
             <Banner/>
             <ArtistList allArtists={artists}/>
         </div>
