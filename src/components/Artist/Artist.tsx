@@ -3,6 +3,7 @@ import {Artist} from "../Types/Artist";
 import './Artist.sass';
 import axios from "axios";
 import {RouteComponentProps} from "react-router-dom";
+import AlbumList from "../AlbumList/AlbumList";
 
 
 const ArtistInfo = ({match}: RouteComponentProps<{ artistid: string }>) => {
@@ -28,9 +29,8 @@ const ArtistInfo = ({match}: RouteComponentProps<{ artistid: string }>) => {
                         {artistInfo.bio}
                     </div>
                 </div>
-
+                <AlbumList albumList={artistInfo.albums}/>
             </div>
-
         </>
     );
 };
